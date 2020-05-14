@@ -14,6 +14,7 @@ public class Registry {
 		new Text("**General Commands:**"),
 		new HelpCommand(),
 		new InfoCommand(),
+		new PingCommand(),
 		new InviteCommand(),
 		new PurgeCommand(),
 		new PrefixCommand(),

@@ -21,10 +21,7 @@ public class InfoCommand extends Command {
 			"info",
 			"Shows the bot info",
 			null,
-			new String[]{
-				"about",
-				"stats",
-				"ping"},
+			new String[]{"about", "stats"},
 			0,
 			false,
 			false,
