@@ -66,9 +66,9 @@ A robust Discord bot using the JDA library for various Minecraft functions.
 #### Default Config
 ```json
 {
-	"clientToken": "your token here",
-	"shardCount": 1,
-	"owner": "0",
+    "clientToken": "your token here",
+    "shardCount": 1,
+    "owner": "0",
     "settings": {
         "logChannel": "0",
         "invite": "https://discordapp.com/oauth2/authorize?client_id=292279711034245130&scope=bot&permissions=93248",
