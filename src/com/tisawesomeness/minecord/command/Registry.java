@@ -18,6 +18,8 @@ public class Registry {
 		new InviteCommand(),
 		new PurgeCommand(),
 		new PrefixCommand(),
+		new GuildCommand(),
+		new UserCommand(),
 		new Text("\n**Utility Commands:**"),
 		new StatusCommand(),
 		new SalesCommand(),
