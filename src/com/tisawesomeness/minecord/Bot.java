@@ -134,7 +134,7 @@ public class Bot {
 					.setShardsTotal(Config.getShardCount())
 					.setActivity(Activity.playing("Loading..."))
 					.setMemberCachePolicy(MemberCachePolicy.NONE)
-					.setDisabledCacheFlags(disabledCacheFlags)
+					.disableCache(disabledCacheFlags)
 					.build();
 				
 				//Update main class
@@ -178,7 +178,7 @@ public class Bot {
 		//Post-init
 		MessageUtils.log(":white_check_mark: **Bot started!**");
 		DiscordUtils.update();
-		System.out.println("Startup finished.");
+		System.out.println("Post-init finished.");
 		RequestUtils.sendGuilds();
 		
 		return true;
