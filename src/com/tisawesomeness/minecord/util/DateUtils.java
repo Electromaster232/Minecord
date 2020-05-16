@@ -223,6 +223,13 @@ public class DateUtils {
 	}
 
 	/**
+	 * Returns a string with the time the bot took to boot up, in seconds, to 3 decimal places
+	 */
+	public static String getBootTime() {
+		return (double) Bot.bootTime / 1000 + "s";
+	}
+
+	/**
 	 * Generates a string with the formatted date and the amount of days since that date
 	 * @param time The date to measure, must be in the past
 	 * @return A string formatted to "%s (%d days ago)"

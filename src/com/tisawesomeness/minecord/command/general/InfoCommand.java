@@ -55,6 +55,7 @@ public class InfoCommand extends Command {
 		eb.addField("Uptime", DateUtils.getUptime(), true);
 		if (Config.getShowMemory() || elevated) {
 			eb.addField("Memory", getMemoryString(), true);
+			eb.addField("Boot Time", DateUtils.getBootTime(), true);
 		}
 		eb.addField("Ping", Bot.shardManager.getAverageGatewayPing() + "ms", true);
 		
