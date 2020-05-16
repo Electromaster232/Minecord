@@ -61,9 +61,9 @@ public class ServerCommand extends Command {
 			}
 		}
 		
-		//Query Mojang for blocked servers, cached by the hour TODO: bot should not fail if it cannot connect to mojang	
+		//Query Mojang for blocked servers, cached by the hour
 		if (System.currentTimeMillis() - 3600000 > timestamp) {
-			String request = RequestUtils.get("https://sessionserver.mojang.com/blockedservers");
+			String request = RequestUtils.getPlain("https://sessionserver.mojang.com/blockedservers");
 			if (request != null) {
 				blockedServers = new HashSet<String>(Arrays.asList(request.split("\n")));
 				timestamp = System.currentTimeMillis();
@@ -80,9 +80,8 @@ public class ServerCommand extends Command {
 		try {
 			MCPingOptions options = MCPingOptions.builder().hostname(hostname).port(port).build();
 			reply = MCPing.getPing(options);
-		} catch (IOException ex) {
-			ex.printStackTrace();
-			return new Result(Outcome.ERROR, ":x: The server is down or unreachable.\nDid you spell it correctly?");
+		} catch (IOException ignore) {
+			return new Result(Outcome.WARNING, ":warning: The server is down or unreachable.\nDid you spell it correctly?");
 		}
 
 		String address = port == 25565 ? hostname : hostname + ":" + port;
